@@ -4,5 +4,5 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+> 太上赐法名张臧乾，金阙玉府法脉，法脉全称太乙禀玄天，金阙上玉府，太上金阙玉府。
 {: .prompt-tip }
