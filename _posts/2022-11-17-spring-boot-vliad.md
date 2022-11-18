@@ -25,7 +25,7 @@ mermaid: true
 
 ```java
 /**
-* 使用 @Valid 注解标识需要对参数 knowledgeVO 进行校验
+* 使用 @Validated 注解标识需要对参数 knowledgeVO 进行校验
 */
 @PostMapping("/add")
 public Result<Void> addKnowledge(@RequestBody @Validated KnowledgeVO knowledgeVO) {
