@@ -107,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer (~> 3.18)
+  jekyll-seo-tag
   jekyll-theme-chirpy (~> 5.3, >= 5.3.1)
   tzinfo (~> 1.2)
   tzinfo-data
