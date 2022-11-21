@@ -18,7 +18,7 @@ mermaid: true
   <version>3.0.0</version>
 </dependency>
 ```
-
+{: file='pom.xml'}
 ## 2. 添加配置
 
 ```yaml
@@ -30,6 +30,8 @@ api-doc:
     application-description: 上知五百年，中知五百年，下知五百年，智能问答系统
     try-host: http://localhost:${server.port}
 ```
+{: file='application.yml'}
+
 
 ```java
 @Component
@@ -63,7 +65,10 @@ public class ApiDocProperties {
     private String tryHost;
 
 }
+```
+{: file='ApiDocProperties.java'}
 
+```java
 @Configuration
 @EnableOpenApi
 public class ApiDocConfig implements WebMvcConfigurer {
@@ -128,6 +133,7 @@ public class ApiDocConfig implements WebMvcConfigurer {
 
 }
 ```
+{: file='ApiDocConfig.java  '}
 
 ## 3. 使用方式
 
@@ -148,7 +154,10 @@ public class KnowledgeController {
         return Result.ok();
     }
 }
+```
+{: file='KnowledgeController.java'}
 
+```java
 @Data
 @Accessors(chain = true)
 @ApiModel("知识")
@@ -165,6 +174,7 @@ public class KnowledgeVO {
 
 }
 ```
+{: file='KnowledgeVO.java'}
     
 ## 4. 运行界面
 ![swagger preview](/assets/images/swagger-1.png){: width="30%" height="30%" .w-75 .normal}
