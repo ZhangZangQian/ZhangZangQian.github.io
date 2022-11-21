@@ -20,7 +20,9 @@ mermaid: true
 ```
 
 ## 2. 使用方式
-### 2.1 基础使用
+
+
+### 基础使用
 
 ```java
 /**
@@ -73,7 +75,7 @@ public class KnowledgeAttributeVO {
 
 ```
 
-### 2.2 常用注解
+### 常用注解
 
 |注解|说明|
 |:---|:------|
@@ -96,7 +98,8 @@ public class KnowledgeAttributeVO {
 |@Email|	验证注解的元素值是Email，也可以通过正则表达式和flag指定自定义的email格式|
 |@Valid|添加到属性上时表示需要对属性进行循环校验|
 
-### 2.3 进阶使用（校验分组）
+
+### 进阶使用（校验分组）
 
 当出现这种场景，当新增时不需要校验 id，修改时需要校验 id 不为空，这怎么搞呢？通过分组的方式，代码见下图
 ```java
@@ -142,7 +145,7 @@ public Result<Void> updateKnowledge(@RequestBody @Validated({OnUpdate.class}) Kn
 ![/spring-boot-vlidation-run-result.png](/assets/images/spring-boot-vlidation-run-result.png){: width="30%" height="30%" .w-75 .normal}
 
 再看后台运行日志
-```
+```Console
 2022-11-17 20:48:45.828  WARN 93016 --- [nio-8613-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.mgdaas.lidihuo.bean.response.Result<java.lang.Void> com.mgdaas.lidihuo.controller.KnowledgeController.updateKnowledge(com.mgdaas.lidihuo.bean.request.KnowledgeVO) with 3 errors: [Field error in object 'knowledgeVO' on field 'attributes': rejected value [null]; codes [NotEmpty.knowledgeVO.attributes,NotEmpty.attributes,NotEmpty.java.util.List,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [knowledgeVO.attributes,attributes]; arguments []; default message [attributes]]; default message [属性列表不能为空]] [Field error in object 'knowledgeVO' on field 'id': rejected value [null]; codes [NotNull.knowledgeVO.id,NotNull.id,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [knowledgeVO.id,id]; arguments []; default message [id]]; default message [id 不能为空]] [Field error in object 'knowledgeVO' on field 'name': rejected value [null]; codes [NotBlank.knowledgeVO.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [knowledgeVO.name,name]; arguments []; default message [name]]; default message [名称不能为空]] ]
 ```
 
@@ -174,5 +177,80 @@ public class GlobalExceptionHandlerController {
 	"code": 400,
 	"message": "id 不能为空,名称不能为空,属性列表不能为空",
 	"data": null
+}
+```
+
+### 自定义校验
+
+实际业务场景中 Spring 为我提供的注解肯定还是不能完全满足校验需求的，比如说校验某个字段数据是否存在，示例如下
+
+```java
+/**
+* 自定义校验注解
+*
+*/
+@Documented
+@Target({FIELD})
+@Retention(RUNTIME)
+@Constraint(validatedBy = {CategoryIdExistsValidator.class})
+public @interface CategoryIdExists {
+
+    /**
+    * 默认错误信息
+    */
+    String message() default "类别 id 不存在";
+
+    Class[] groups() default {};
+
+    Class[] payload() default {};
+
+}
+
+/**
+* 校验逻辑实现类
+* 
+*/
+public class CategoryIdExistsValidator implements ConstraintValidator<CategoryIdExists, Long> {
+
+    @Autowired
+    private CategoryRepository categoryRepository;
+
+    @Override
+    public boolean isValid(Long value, ConstraintValidatorContext context) {
+        // 为空时不校验
+        if (value == null) {
+            return true;
+        }
+        // 禁用默认消息
+        context.disableDefaultConstraintViolation();
+
+        // 查询数据库
+        Optional<Category> optional = categoryRepository.findById(value);
+        if (optional.isPresent()) {
+            return true;
+        }
+
+        // 校验不通过设置错误信息
+        context.buildConstraintViolationWithTemplate("类别 id:" + value + "  不存在").addConstraintViolation();
+        return false;
+    }
+}
+
+@Data
+@Accessors(chain = true)
+@ApiModel("知识类别")
+public class CategoryVO {
+
+    @ApiModelProperty("类别 id")
+    @NotNull(message = "类别 id 不能为空", groups = {OnUpdate.class})
+    @CategoryIdExists(groups = {OnUpdate.class})
+    private Long id;
+
+    @NotBlank(message = "类别名称不能为空")
+    private String name;
+
+    @CategoryIdExists
+    private Long parentId;
+
 }
 ```
