@@ -1,9 +1,9 @@
 ---
-title: 「转载」美团知识图谱问答技术实践与探索
+title: 转载：美团知识图谱问答技术实践与探索
 author: zhangzangqian
 date: 2022-11-27 16:00:00 +0800
 categories: [技术]
-tags: [智能问答, 知识图谱, NLP]
+tags: [智能问答, 知识图谱, NLP, 转载]
 math: true
 mermaid: true
 ---
