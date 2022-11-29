@@ -1,5 +1,5 @@
 ---
-title: 《中国仙道之究竟内金丹法》之精炁神
+title: 《中国仙道之究竟内金丹法》之炁的意义与性质
 author: zhangzangqian
 date: 2022-11-29 18:00:00 +0800
 categories: [读书笔记]
