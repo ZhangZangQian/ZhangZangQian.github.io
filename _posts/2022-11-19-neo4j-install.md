@@ -11,7 +11,7 @@ mermaid: true
 
 
 ## 本地安装（Linux环境）
-1. 安装 JDK 11，因为我本地之前已经安装了 Java 8，因此开始使用 Jenv 进行 Java 版本管理
+1. 安装 JDK 11，因为我本地之前已经安装了 Java 8，因此推荐使用 Jenv 进行 Java 版本管理
 2. 执行如下命令
 	
 	```bash
