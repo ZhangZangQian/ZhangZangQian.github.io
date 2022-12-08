@@ -177,5 +177,5 @@ public class KnowledgeVO {
 {: file='KnowledgeVO.java'}
     
 ## 4. 运行界面
-![swagger preview](/assets/images/swagger-1.png){: width="30%" height="30%" .w-75 .normal}
-![swagger preview](/assets/images/swagger-2.png){: width="30%" height="30%" .w-75 .normal}
+![swagger preview](/assets/img/swagger-1.png){: width="30%" height="30%" .w-75 .normal}
+![swagger preview](/assets/img/swagger-2.png){: width="30%" height="30%" .w-75 .normal}
