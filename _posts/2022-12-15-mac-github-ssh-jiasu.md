@@ -12,7 +12,7 @@ tags: [git]
 > kex_exchange_identification: Connection closed by remote host<br/>Connection closed by 127.0.0.1 port 7890<br/>fatal: Could not read from remote repository.<br/>Please make sure you have the correct access rights and the repository exists.
 {: .prompt-danger}
 
-通过执行 `ssh -T git@github.com` 命令发现在建立建立的步骤停住走不下去了，如下图
+通过执行 `ssh -T git@github.com -v` 命令发现在建立建立的步骤停住走不下去了，如下图
 
 ![ssh -T 测试](/assets/img/git-ssh-T.png)
 

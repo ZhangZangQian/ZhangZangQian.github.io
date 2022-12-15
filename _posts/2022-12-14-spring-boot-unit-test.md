@@ -3,7 +3,7 @@ title: SpringBoot 中的单元测试
 author: zhangzangqian
 date: 2022-12-14 18:00:00 +0800
 categories: [技术]
-tags: [SpringBoot]
+tags: [Java, SpringBoot]
 math: true
 mermaid: true
 ---
