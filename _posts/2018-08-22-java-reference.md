@@ -1,7 +1,7 @@
 ---
 title: Java Reference & ReferenceQueue
 author: zhangzangqian
-date: 2018-08-22 21:00:00 +0800
+date: 2018-08-22 22:00:00 +0800
 categories: [技术]
 tags: [Java]
 math: true
@@ -22,7 +22,7 @@ mermaid: true
 
 类图如下。
 
-![java ref structure](/assets/img/java_ref_structure.png)
+![java ref structure](/assets/img/java_ref_structure.png){: width="10%" height="10%" .w-25}
 
 ## ReferenceQueue
 
