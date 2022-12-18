@@ -3,7 +3,7 @@ title: LinkedHashMap 源码解读(JDK 1.8)
 author: zhangzangqian
 date: 2018-08-04 20:00:00 +0800
 categories: [技术]
-tags: [Java]
+tags: [Java, 集合, 源码]
 math: true
 mermaid: true
 ---
@@ -511,7 +511,6 @@ public class LinkedHashMap<K,V>
         implements Iterator<Map.Entry<K,V>> {
         public final Map.Entry<K,V> next() { return nextNode(); }
     }
-
 
 }
 ```

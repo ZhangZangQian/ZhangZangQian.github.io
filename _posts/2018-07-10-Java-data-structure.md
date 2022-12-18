@@ -3,7 +3,7 @@ title: Java 集合体系学习
 author: zhangzangqian
 date: 2018-07-10 19:00:00 +0800
 categories: [技术]
-tags: [Java]
+tags: [Java, 集合]
 math: true
 mermaid: true
 ---
