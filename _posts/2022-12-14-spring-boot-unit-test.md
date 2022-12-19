@@ -45,8 +45,8 @@ mermaid: true
             return db.stream().filter(u -> u.getId().equals(id)).findAny().orElse(null);
         }
 
-        public void save(User user) {
-            this.db.add(user);
+        public boolean save(User user) {
+            return this.db.add(user);
         }
 
     }
@@ -222,6 +222,44 @@ class UserServiceTest {
             assert login;
         }
     }
+
+}
+
+```
+
+### 匹配任意参数
+
+通过 `org.mockito.ArgumentMatchers` 的 `anyXx()` 方法，`xx` 表示类型，如下是匹配任意 `int` 值
+
+```java
+// 匹配任意 int 值都返回 new User().setId(1).setName("用户1").setPassword("pwd1") 这个对象
+Mockito.when(userDAO.selectById(org.mockito.ArgumentMatchers.anyInt()))
+                .thenReturn(new User().setId(1).setName("用户1").setPassword("pwd1"));
+```
+
+当某个方法参数是对象时
+
+```java
+@Service
+public class UserService {
+
+    @Autowired
+    private UserDAO userDAO;
+
+    public boolean register(User user) {
+        return userDAO.save(user);
+    }
+
+}
+
+@Test
+void register() {
+
+    Mockito.when(userDAO.save(ArgumentMatchers.any())).thenReturn(false);
+
+    boolean register = userService.register(null);
+
+    assert !register;
 
 }
 
