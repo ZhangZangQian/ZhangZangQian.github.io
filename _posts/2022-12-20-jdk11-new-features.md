@@ -89,3 +89,7 @@ assertThat(httpResponse.body()).isEqualTo("Hello from the server!");
 $ java HelloWorld.java
 Hello Java 11!
 ```
+
+除了新增的API外，JDK11还带来了 EpsilonGC，就是什么也不做的 GC，以及 ZGC，一个几乎可以做到毫秒级暂停的GC。ZGC 还处于实验阶段，所以启动它需要命令行参数 `-XX:+UnlockExperimentalVMOptions -XX:+UseZGC。`
+
+JDK11是一个LTS版本（Long-Term-Support），所以放心升级吧！！！
