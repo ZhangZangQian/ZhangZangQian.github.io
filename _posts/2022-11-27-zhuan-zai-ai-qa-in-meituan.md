@@ -232,4 +232,4 @@ KBQA不仅是一个热门的研究方向，更是一个复杂的系统，其中�
 更多类型的复杂问题：除了上述提到的带约束和多跳问题，用户还会问比较类、多关系类问题，未来我们会对图谱构建和Query理解模块进行更多优化，解决用户的长尾问题。
 端到端KBQA：不管对工业界还是学术界，KBQA都是一个复杂的流程，如何利用预训练模型以及其本身的知识，简化整体流程、甚至端到端方案，是我们要持续探索的方向。
 
-原文地址：<https://tech.meituan.com/2021/11/03/knowledge-based-question-answering-in-meituan.html>
+原文地址：<https://tech.meituan.com/2021/11/03/knowledge-based-question-answering-in-meituan.html>{: target="blank"}
