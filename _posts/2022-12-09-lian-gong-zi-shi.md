@@ -20,7 +20,7 @@ tags: [中国仙道之究竟, 内金丹法]
 
     优点姿势平稳，不宜倾斜，缺点初学者很难做到，尤其中老年人更是不易。修习仙道过程中部分功法须使用小腿及脚趾。故此法虽宜学佛，不宜修仙。
 
-    ![双盘](/assets/img/shuangpan.png){: width="10%" height="10%" .w-25}
+    ![双盘](/assets/img/shuangpan.png)
 
 - 单盘坐
 
@@ -31,19 +31,19 @@ tags: [中国仙道之究竟, 内金丹法]
 
     需在臀部加垫二三寸厚垫，以稳定中心，缺点与双盘相同。
 
-    ![单盘](/assets/img/danpan.png){: width="10%" height="10%" .w-25}
+    ![单盘](/assets/img/danpan.png)
 
 - 自然盘坐
 
     又称散盘，小腿各放在足有大腿下方，甚为舒适，且展开甚易。此种做法为多数人采用，如在臀部稍微垫高，则更加平稳省力。
 
-    ![自然盘](/assets/img/sanpan.png){: width="10%" height="10%" .w-25}
+    ![自然盘](/assets/img/sanpan.png)
 
 - 危坐
 
     儒家传统坐法，两小腿垂直于地面，两脚与肩同宽，身体端正，两手掌掌心朝下，轻置于两腿或两膝上。背部不靠住任何物品，仅臀部正坐于椅上。两大腿向外平伸，与小腿成直角。
 
-    ![危坐](/assets/img/weizuo.png){: width="10%" height="10%" .w-25}
+    ![危坐](/assets/img/weizuo.png)
 
 ### 卧姿
 

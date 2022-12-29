@@ -71,7 +71,7 @@ false
 3. 应用程序类加载器（Application ClassLoader），这个类加载器由 `sum.msic.Launcher$ApplicationLoader` 实现。由于这个类加载器是 ClassLoader 中的 `getSystemClassLoader()` 方法的返回值，所以一般也称它为系统类加载器。它负责加载用户类路径（ClassPath）上所指定的类库，开发者可以直接使用这个类加载器，如果应用程序中没有自定义过自己的类加载器，一般情况下这个就是程序中默认的类加载器。
 
 
-![类加载器双亲委派模型](/assets/img/parents-delegation-model.jpeg){: width="10%" height="10%" .w-25}
+![类加载器双亲委派模型](/assets/img/parents-delegation-model.jpeg)
 
 上图中展示的是类加载器之间的这种层次关系，称之为双亲委派模型（Parents Delegation Model）**。双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应当有自己的父类加载器。这里类加载器之间的父子关系一般不会以继承（Inheritance）的关系来实现，而是都使用组合（Composition）关系来复用类加载器的代码。**双亲委派模型在 JDK1.2 期间被引用并被广泛应用于之后几乎所有的 Java 程序中，但他并**不是一个强制性的约束模型**，而是 Java 设计者推荐给开发者的一个类加载器实现方式。
 

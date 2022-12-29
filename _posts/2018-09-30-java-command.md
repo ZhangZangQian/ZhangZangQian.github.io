@@ -192,7 +192,7 @@ Server is ready.
 ```
 分析结果截图如下：
 
-![jhat 的分析结果](/assets/img/jhat-analysis.png){: width="10%" height="10%" .w-25}
+![jhat 的分析结果](/assets/img/jhat-analysis.png)
 
 命令相关选项及打印信息可参考 [jhat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jhat.html#CIHHJAGE){: target="_blank"}
 

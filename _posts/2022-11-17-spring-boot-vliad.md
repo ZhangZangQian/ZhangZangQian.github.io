@@ -142,7 +142,7 @@ public Result<Void> updateKnowledge(@RequestBody @Validated({OnUpdate.class}) Kn
 ```
 
 整合代码后运行代码执行结果如下：
-![/spring-boot-vlidation-run-result.png](/assets/img/spring-boot-vlidation-run-result.png){: width="30%" height="30%" .w-75 .normal}
+![/spring-boot-vlidation-run-result.png](/assets/img/spring-boot-vlidation-run-result.png)
 
 再看后台运行日志
 ```Console

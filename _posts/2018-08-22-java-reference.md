@@ -22,7 +22,7 @@ mermaid: true
 
 类图如下。
 
-![java ref structure](/assets/img/java_ref_structure.png){: width="10%" height="10%" .w-25}
+![java ref structure](/assets/img/java_ref_structure.png)
 
 ## ReferenceQueue
 
