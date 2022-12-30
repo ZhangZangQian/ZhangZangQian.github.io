@@ -3,7 +3,7 @@ title: Maven 打包可执行 Jar 包
 author: zhangzangqian
 date: 2019-02-27 21:00:00 +0800
 categories: [技术]
-tags: [Java, Mave]
+tags: [Java, Maven]
 math: true
 mermaid: true
 ---
