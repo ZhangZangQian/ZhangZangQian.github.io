@@ -3,7 +3,7 @@ title: Nginx 安装
 author: zhangzangqian
 date: 2022-12-11 18:00:00 +0800
 categories: [技术]
-tags: [Nginx]
+tags: [Nginx, Linux]
 math: true
 mermaid: true
 ---
@@ -124,4 +124,3 @@ nginx
     systemctl status *.service #查询服务运行状态
     systemctl --failed #显示启动失败的服务
     ```
-
