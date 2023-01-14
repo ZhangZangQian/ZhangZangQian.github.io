@@ -1,7 +1,7 @@
 ---
 title: Maven 打包源码
 author: zhangzangqian
-date: 2021-01-12 21:00:00 +0800
+date: 2019-01-12 21:00:00 +0800
 categories: [技术]
 tags: [Java, maven]
 math: true
