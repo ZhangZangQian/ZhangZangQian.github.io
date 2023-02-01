@@ -1,5 +1,5 @@
 ---
-title: CentOS7 离线安装 MySQL8
+title: CentOS7 安装 MySQL8
 author: zhangzangqian
 date: 2020-12-27 21:00:00 +0800
 categories: [技术]
@@ -8,7 +8,37 @@ math: true
 mermaid: true
 ---
 
-## 下载 rpm 包并解压
+## 在线安装
+
+```bash
+# 下载 rpm 包
+wget  https://repo.mysql.com//mysql80-community-release-el7-1.noarch.rpm
+# 安装 yum repo文件并更新 yum 缓存
+rpm -ivh mysql80-community-release-el7-1.noarch.rpm
+yum clean all
+yum makecache
+# yum 安装 mysql
+yum install mysql-community-server -y --nogpgcheck
+# 启动 mysql
+systemctl start mysqld
+# 获取 mysql 密码
+cat /var/log/mysqld.log | grep password
+# 使用初始密码登录 mysql
+mysql -uroot -p
+```
+
+执行 sql 修改密码
+
+```sql
+# 注意位数和种类至少大+写+小写+符号+数字
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+```
+
+## 离线安装
+
+### 下载 rpm 包
+
+首先在一台联网电脑下载好安装包
 
 ```bash
 wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.31-1.el7.x86_64.rpm-bundle.tar
@@ -16,7 +46,9 @@ wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.31-1.el7.x86_64.rpm
 tar xvf mysql-8.0.31-1.el7.x86_64.rpm-bundle.tar
 ```
 
-解压得到如下安装包:
+### 上传至离线服务器并解压
+
+上传至需要安装的服务器，解压得到如下安装包:
 
 - mysql-community-client-8.0.31-1.el7.x86_64.rpm
 - mysql-community-client-plugins-8.0.31-1.el7.x86_64.rpm
@@ -31,7 +63,7 @@ tar xvf mysql-8.0.31-1.el7.x86_64.rpm-bundle.tar
 - mysql-community-server-debug-8.0.31-1.el7.x86_64.rpm
 - mysql-community-test-8.0.31-1.el7.x86_64.rpm
 
-## 安装
+### 安装
 
 依次安装：
 
@@ -47,7 +79,7 @@ rpm -ivh mysql-community-server-8.0.31-1.el7.x86_64.rpm
 1. 安装 `mysql-community-libs-8.0.31-1.el7.x86_64.rpm` 时可能会得到 `mysql-community-libs-8.0.31-1.el7.x86_64.rpm: Header V4 RSA/SHA256 Signature xxx : NOKEY` 报错，执行 `yum remove mysql-libs` 即可解决。
 2. 安装 `mysql-community-server-8.0.31-1.el7.x86_64.rpm` 时可能会得到 `libaio.so.1()(64bit) is needed by mysql-community-server-8.0.31-1.el7.x86_64` 类似报错，执行 `yum install libaio` 即可解决。
 
-## 运行
+### 运行
 
 ```bash
 # 初始化 MySQL 服务

@@ -8,9 +8,20 @@ math: true
 mermaid: true
 ---
 
-今天要为一个军工项目搭建服务的基础环境，使用的是银河麒麟V10服务器，不能连接外网，因此使用源码编译安装的方式，特此记录。
+## yum 安装
 
-## 安装
+```bash
+# 安装
+yum install epel-release -y
+yum install nginx -y
+
+# 启动
+nginx
+```
+
+## 源码编译安装
+
+### 安装
 
 ```bash
 # PCRE - 支持正则表达式。NGINX Core和Rewrite模块要求。
@@ -57,7 +68,7 @@ nginx
 
 安装参考: <https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source>
 
-## 设置开机自启
+### 设置开机自启
 
 1. 通过 `vim /lib/systemed/system/nginx.service` 新建 `nginx.service` 文件，并添加如下内容
 
