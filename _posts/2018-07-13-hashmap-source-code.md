@@ -128,7 +128,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     * 如果 key 为空，返回 0 
     * 如果 key 不为空， key 的 hascode 记为 a，a 无符号位移 16 位记为 b，
     * 然后返回 a 跟 b 位异运算的值。
-    * Java 各种位运算解析参考 https://blog.zhangyong.io/java-bit-operations/
+    * Java 各种位运算解析参考 https://me.zhangyong.io/java-bit-operations/
     */
     static final int hash(Object key) {
         int h;
