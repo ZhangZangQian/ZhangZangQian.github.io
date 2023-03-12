@@ -3,7 +3,7 @@ title: 使用 Jenkins + GitLab 进行代码自动部署
 author: zhangzangqian
 date: 2022-10-08 12:00:00 +0800
 categories: [技术]
-tags: [Linux, Jenkins]
+tags: [Linux, Jenkins, GitLab]
 math: true
 mermaid: true
 ---
